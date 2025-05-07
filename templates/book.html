@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <style>
+        body{
+            background-color: black;    
+        }
+        .bg{
+            opacity: 0.9;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(7.5px) brightness(30%);
+
+        }
+        form{
+            width: 100%;
+            margin: 0%;
+        }
+        .leftside{
+            color: white;
+            display: flex; 
+            flex-direction: column; 
+            justify-items: center;
+            font: bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            width: 20%;
+            align-items: end;
+        }
+        .rightside{
+            display: flex;
+            flex-direction: column; 
+            justify-items: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            width: 50%;
+            
+        }
+        label{
+            margin: 6.5%;
+        }
+        input{
+            margin: 2.5%;
+            font-size: 17.5px;
+            border-radius: 7.5px;
+        }
+        input:hover{
+            padding: 0.25%;
+        }
+        select{
+            margin: 2.5%;
+            font-size: 17.5px;
+            border-radius: 7.5px;
+            width: max-content;
+        }
+        select:hover{
+            padding: 0.25%;
+        }
+        h2{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            color: white;
+        }
+        body{
+            margin: 0%;
+        }
+        option{
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img  class="bg" src="/static/download (10).jpg" alt="">
+    <div style="width: 98%; justify-items: center; color: white; margin: 0%; padding: 1%;">
+        <h2>Book Table</h2>
+    </div>
+    <form action="/booking" method="post" style="display: flex;">
+        <div class="leftside">
+            <label for="Name">Name :</label>
+            <label for="Phoneno">Phone :</label>
+            <label for="Table">Select Table :</label>
+            <label for="Location">Location :</label>
+            <label for="Date">Date :</label>
+            <label for="Time">Time :</label>
+        </div>
+        <div class="rightside">
+            <input type="text" id="name" name="name" style="width: 75%;">
+            <input type="number" id="phoneno" name="phoneno" style="width: max-content;">
+            <select name="Table" id="Table">
+                <option value="Solo">Solo</option>
+                <option value="Duo">Duo</option>
+                <option value="Family">Family</option>
+            </select>
+            <select name="Location" id="Location">
+                <option value="Area 1">Area 1</option>
+                <option value="Area 2">Area 2</option>
+                <option value="Area 3">Area 3</option>
+            </select>
+            <input type="date" id="dateinfo" name="dateinfo" style="width: max-content;">
+            <input type="time" id="timeinfo" name="timeinfo" style="width: max-content;">
+            <input class="sub" type="submit" style="width: max-content; background-color: gainsboro;">
+        </div>
+    </form>
+</body>
+</html>

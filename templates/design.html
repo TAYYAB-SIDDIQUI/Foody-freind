@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animation</title>
+  <style>
+    .ball {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      position: relative;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        top: 0;
+      }
+      50% {
+        top: 200px;
+      }
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer; /* 👈 This is the key line */
+      font-size: 16px;
+      position: relative;
+      transition: all 10s ease;
+    }
+
+    .btn:hover {
+      background-color: #3dc4d3;
+      height: 100px;
+      width: 100px;
+      border-radius: 500px;
+      /* top: 100px;
+      right: 100px; */
+    }
+
+    .chco{
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+        background-color: blueviolet;
+        transition: all 3s ease;
+        position: relative;
+        animation: forward 2s infinite;
+    }
+    @keyframes forward{
+        0%, 100% {
+        left: 0;
+      }
+      90% {
+        left: 200px;
+      }
+    }
+    .chco:hover {
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        color: aliceblue;
+        background-color: rgb(100,255,20);
+
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <button class="btn">Click Me</button>
+  <div class="chco">hello</div>
+
+
+
+
+  
+</body>
+</html>

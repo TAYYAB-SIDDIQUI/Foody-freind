@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body,html{
+            margin: 0%;
+            background-color: black;
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            margin: 20px;
+            border: none;
+            border-bottom:solid white 2px;
+            background: transparent;
+            color: white;
+        }
+        input:focus{
+            outline: none;
+            box-shadow: none;
+        }
+        label{
+            margin: 10px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            font: 25px;
+        }
+        a:hover{
+            color: rgb(147, 131, 251);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-top: 0px;">Sign In</h1>
+    <div style="text-align: center;">
+        <form action="/Signininfo" method="post">
+            <label for="">Username:</label>
+            <input type="text" id="Username" name="Username">
+            <br>
+            <label for="">Password:</label>
+            <input type="text" id="Password" name="Password">
+            <br>
+            <input type="submit" style="background-color: grey;">   
+        </form>
+    </div>
+    <div><a href='/Signupinfo'>Sign Up</a></div>
+</body>
+</html>

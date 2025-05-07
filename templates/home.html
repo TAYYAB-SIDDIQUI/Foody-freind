@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foody freind</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body{
+            background-color: black;
+            position: relative;
+            margin: 0%;
+        }
+        .bg{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(7.5px);
+            z-index: -1;
+            margin: 0%;
+        }
+        /* nav{
+            
+            width: 100%;
+            margin: 0px;
+            background-color: black;
+        }
+        ul{
+            
+            margin: 0px;
+            width: 80%;
+            padding-top: 0.5%;
+        }
+        li{
+            list-style: None;
+            font-style: None;
+            margin: 0px;
+            padding-right: 5%;
+        } */
+        .Search_bar{
+            padding: 0.5%;
+        }
+        /* a{
+            list-style: None;
+            font-style: None;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 17.5px;
+        }
+        a:hover{
+            font-size: 20px;
+        } */
+
+        .Search_inp:hover{
+            border: 5px;
+            border-width: 10px;
+            padding: 2.5px;
+        }
+        .Search_sub:hover{
+            background-color: grey;
+            color: white;
+        }
+        .heading{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            justify-items: center;
+        }
+        .Description{
+            background-color: black;
+            color: white;
+            display: flex;
+            height: 40vh;
+        }
+        .Menu{
+            background-color: black;
+        }
+        .infoimg{
+            width:25%;
+            justify-content: left;
+            margin: 0.5%;
+        }
+        .info{
+            width: 75%;
+            padding-left: 5%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .orderfood{
+            position: relative;
+            cursor:pointer;
+            transition: all 3s ease;
+            overflow:visible;
+            border: solid ;
+            border-radius: 10px;
+            border-width: 2.5px;
+            border-color: white;
+        }
+        .bell-icon{
+            margin-left: 10px;
+            opacity: 0;
+            color: goldenrod;
+            transform: translateX(0px);
+            transition: opacity 0.5s ease,transform 0.1s ease;
+        }
+        .orderfood:hover{
+            /* background-image: url("/static/download\ \(3\).jpeg");
+            background-size: cover; */
+            background-color: rgb(100, 25, 25);
+            color: goldenrod;
+            transition: all 0.5s ease;
+        }
+        .orderfood:hover .bell-icon{
+            opacity: 1;
+            transform: translateX(0px);
+            animation: ring 1s ease;
+        }
+        @keyframes ring {
+            0% { transform: rotate(0);}
+            20% { transform: rotate(15deg);}
+            40% { transform: rotate(-10deg);}
+            60% { transform: rotate(5deg);}
+            80% { transform: rotate(-20deg);}
+            100% {transform: rotate(0);}
+        }
+        .booktable{
+            position: relative;
+            cursor:pointer;
+            transition: all 3s ease;
+            overflow:visible;
+            border: solid ;
+            border-radius: 10px;
+            border-width: 2.5px;
+            border-color: white;
+        }
+        .chair-icon{
+            margin-left: 10px;
+            opacity: 0;
+            color: goldenrod;
+            transform: translateX(0px);
+            transition: opacity 0.5s ease,transform 0.1s ease;
+        }
+        .booktable:hover{
+            /* background-image: url("/static/download\ \(3\).jpeg");
+            background-size: cover; */
+            background-color: rgb(100, 25, 25);
+            color: goldenrod;
+            transition: all 0.5s ease;
+        }
+        .booktable:hover .chair-icon{
+            opacity: 1;
+            transform: translateX(0px);
+            animation: comeout 1s ease;
+        }
+        @keyframes comeout {
+            0% { transform:translateX(10px);}
+            50% {transform: translateX(-10px);}
+            100% {transform: translateX(0px);}
+        }
+        .logo{
+            width: 4%;
+            height: 85%;
+            margin-right: 20px;
+            border-radius: 50px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            position: relative;
+        }
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      border: solid ;
+      border-radius: 10px;
+      border-width: 2.5px;
+      border-color: white;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      user-select: none;
+      z-index: 2;
+    }
+
+    .prev { left: 0; }
+    .next { right: 0; }
+    .hamburg{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .hamburg div{
+        width: 100%;
+        height: 4px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    .nav-barcl{
+        position: fixed;
+        top: 0;
+        right: -250px;
+        height: 100%;
+        width: 250px;
+        background-color: #222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s;
+        z-index: 1000;
+    }
+    .nav-barcl ul li{
+        list-style: none;
+    }
+    .nav-barcl ul li a{
+        color:white;
+        text-decoration: none;
+        font-size: 24px;
+        margin: 20px ;
+    }
+    .nav-barcl.open{
+        right:0;
+    }
+    </style>
+</head>
+<body>
+    <img class="bg" src="/static/images.jpg" alt="backimg">
+    <div class="hamburg" onclick="togglehamburg()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    {{ status | safe}}
+    <nav class="nav-barcl" id="nav-bar">
+        <ul>
+            <!-- <img class="logo" src="/static/logoimg.PNG" alt="logoimg"> -->
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            {{ logout | safe }}
+        </ul>
+            <input class="Search_inp" type="search" name="search" id="search" placeholder="Search" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; border-radius: 5px; font-size:15px; cursor: pointer;">
+            <button class="Search_sub" onclick="scrolltoward()" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; border-radius: 5px; font-size: 15px; cursor: pointer; ">Submit</button>
+    </nav>
+    
+    <section class="heading" id="Food">
+        <h1  style="font-size: 35px; color: white; margin-top: 100px;">Foody Friend</h1>
+    </section>
+    <section class="Description">
+        <div class="info">
+            <p id="Foody Freind" style="font-size: 20px;">This is Foody Friend! <br> Enjoy with your freinds multiple cuisine <br> healthy food</p>
+        </div>
+        <div class="infoimg">
+            <img src="/static/download (9).jpg" alt="" style="height: 100%; width: 90%;">
+        </div>
+        
+    </section>
+    <br>
+    <br>
+        <div class="slideshow-container">
+            <div class="slide"><img src="/static/download (15).jpg"></div>
+            <div class="slide"><img src="/static/download (16).jpg"></div>
+            <div class="slide"><img src="/static/download (19).jpg"></div>
+            <div class="slide"><img src="/static/download (12).jpg"></div>
+            <div class="slide"><img src="/static/download (7).jpg"></div>
+            <div class="slide"><img src="/static/download (9).jpg"></div>
+
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+    <br>
+    <br>
+    <section class="Menu" style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; justify-items: center;">
+        <h2 >Menu</h2>
+        <div style="display: flex; flex-direction: row; width: 100%;">
+            <div style="margin: 1%; width: 50%; justify-items: center;">
+                <label for="Veg" style="font-size: 20px; font: bolder;">Vegetarian</label><br><br>
+                <div>
+                    <!-- <select name="veg" id="veg" style="border-radius: 10px; border: solid ; border-radius: 10px; border-width: 2.5px; border-color: white; font: bolder; font-size: 15px; padding: 15%; background-color: green; color: black; background-image: url('/static/download (14).jpg');">
+                        <option value="Salad" style="color: white; ">Salad</option>
+                        <option value="Paneer" style="color: white;">Paneer</option>
+                        <option value="chana" style="color: white;">Chana</option>
+                        <option value="Dal Chawal" style="color: white;">Dal Cha</option>
+                    </select> -->
+                    {{veg | safe}}
+                </div>
+            </div>
+            <div style="margin: 1%; width: 50%; justify-items: center;">
+                <label for="checkboc2" style="font-size: 20px; font: bolder;">Non Vegetarian</label><br><br>
+                <div >
+                    <!-- <select name="nonveg" id="nonveg" style="border-radius: 10px;border: solid ; border-radius: 10px; border-width: 2.5px; border-color: white; width: 150%; font: bolder; font-size: 15px; padding: 15%;  background-color: rgb(255, 100, 100); color: black; background-image: url('/static/download (29).jpg'); ">
+                        <option value="Chicken" style="color: white;">Chicken</option>
+                        <option value="Biryani" style="color: white;">Biryani</option>
+                        <option value="Pulaw" style="color: white;">Pulaw</option>
+                        <option value="Tandoori" style="color: white;">Tandoori</option>
+                    </select> -->
+                    {{ nonveg | safe}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <section style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color: black; justify-items: center;">
+        <div style="display: flex; justify-content: center; width: 100%; height: 100%;">
+            <form action="/orderfunc" method="post" style="height: 100%; width: 100%; display: flex; justify-content: center;">
+                <button value="Order Food" class="orderfood" style="font-size: 20px; border-radius: 10px; padding: 0.5%; padding-top: 0.5%; margin: 2.5%; font: bolder; width: max-content;"><i class="fas fa-bell bell-icon"></i> Order<i class="fas fa-bell bell-icon"></i></button>
+            </form>
+            <form action="/bookfunc" method="post" style="height: 100%; width: 100%; display: flex; justify-content: center;">
+                <button value="Book Table" class="booktable" style="font-size: 20px; border-radius: 10px; padding: 0.5%; margin: 2.5%; font: bolder; width: max-content;"><i class="fas fa-chair chair-icon"></i> Book Table<i class="fas fa-chair chair-icon"></i></button>
+            </form>
+        </div>
+    </section>
+    <footer style="background-color: black; margin-bottom: 0%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+        <div style="justify-items: center; color: white;" >
+            <h3>Contact </h3>
+            <div>
+                <label for="Phone">Phone :</label>
+                <label for="Phone no">00000 00000</label>
+            </div>
+            <div>
+                <label for="Gmail">Gmail :</label>
+                <label style="font: italic;">abc123@gmail.com</label>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides.forEach(slide => slide.style.display = "none");
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].style.display = "block";
+  }
+
+  function changeSlide(n) {
+    showSlide(currentSlide + n);
+  }
+
+  function autoSlide() {
+    changeSlide(1);
+    setTimeout(autoSlide, 4000); // change slide every 4 seconds
+  }
+
+  showSlide(currentSlide);
+  autoSlide();
+
+  function togglehamburg(){
+    document.getElementById("nav-bar").classList.toggle('open')
+  }
+
+  function scrolltoward(){
+    var query=document.getElementById("search").value.toLowerCase();
+    var element = document.getElementById(query);
+    if (element) {
+        element.scrollIntoView({behavior:"smooth"});
+    } else {
+        alert("not found")
+    }
+  }
+</script>
+
+</html>
